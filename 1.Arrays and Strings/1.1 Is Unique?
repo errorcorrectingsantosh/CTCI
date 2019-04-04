@@ -1,0 +1,41 @@
+from collections import defaultdict
+
+def isunique1(given_string):
+    #a) brute force: Time Complexity: O(n^2), Space Complexity: O(1)
+    for index1 in range(len(given_string)):
+        for index2 in range(index1 + 1, len(given_string)):
+            if(given_string[index1] == given_string[index2]):
+                return False
+    return True    
+
+def isunique2(given_string):
+    #b) sort, compare adjacent characters: Time Complexity: O(nlogn), Space Complexity: O(1)/O(n)
+    given_string = sorted(given_string) #O(n) space complexity in this implementation
+    prev = None
+    for i in given_string:
+        if(i == prev):
+            return False
+        else:
+            prev = i
+    return True
+
+def isunique3(given_string):
+    #c) hash and check characters: Time Complexity: O(n), Space Complexity: O(n)
+    d = defaultdict(lambda:0)
+    for i in given_string:
+        if(d[i] == 1):
+            return False
+        d[i] += 1
+    return True
+
+
+
+given_string = "abcdefghijklmnop"
+x = isunique1(given_string)
+y = isunique2(given_string)
+z = isunique3(given_string)
+print(z)
+if(x == y and x== z):
+    print("correct")
+else:
+    print("incorrect")
