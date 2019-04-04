@@ -1,0 +1,37 @@
+from collections import defaultdict
+
+def checkpermutation1(given_string1,given_string2):
+    #a) sort, compare both strings: Time Complexity: O(nlogn), Space Complexity: O(1)/O(n) sort space
+    if(len(given_string1) != len(given_string2)):
+        return False
+    given_string1 = sorted(given_string1)
+    given_string2 = sorted(given_string2)
+    for i in range(len(given_string1)):
+        if(given_string1[i] != given_string2[i]):
+            return False
+    return True
+    
+    
+def checkpermutation2(given_string1,given_string2):
+    #b) hash 1 string character counts, compare other string:
+    #Time Complexity: O(n), Space Complexity: O(n)
+    d = defaultdict(lambda:0)
+    for i in given_string1:
+        d[i] += 1
+    for i in given_string2:
+        if(d[i] >= 1):
+            d[i] -= 1
+        else:
+            return False
+    return True
+
+given_string1 = "abcdefghijklmnop"
+given_string2 = "ponmlkjihgfedcba"
+
+x = checkpermutation1(given_string1,given_string2)
+y = checkpermutation2(given_string1,given_string2)
+print(x,y)
+if(x == y):
+    print("correct")
+else:
+    print("incorrect")
