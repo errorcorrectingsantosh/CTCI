@@ -1,0 +1,105 @@
+from collections import defaultdict
+
+book = """Need to check on human, have not seen in an hour might be dead oh look,
+human is alive, hiss at human,
+feed me run in circles cat gets stuck in tree firefighters try to get cat down
+firefighters get stuck in tree cat eats firefighters' slippers mrow eat grass,
+throw it back up so chew foot.
+If it fits i sits stare out cat door then go back inside or the door is opening!
+how exciting oh, it's you, meh but spread kitty litter all over house put butt in owner's face.
+Caticus cuteicus catasstrophe, scratch at fleas, meow until belly rubs,
+hide behind curtain when vacuum cleaner is on scratch strangers and poo on owners food and
+let me in let me out let me in let me out let me in let me out who broke this door anyway .
+Man running from cops stops to pet cats, goes to jail.
+Cats are fats i like to pets them they like to meow back climb a tree,
+wait for a fireman jump to fireman then scratch his face and chase the pig around the house 
+cough hairball, eat toilet paper, 
+chase red laser dot groom forever, stretch tongue and leave it slightly out, blep.
+Kick up litter mouse, and scratch, you are a captive audience while sitting on the toilet, pet me.
+If human is on laptop sit on the keyboard purr while eating give me attention or face the wrath of my
+claws, cereal boxes make for five star accommodation so groom yourself 4 hours -
+checked, have your beauty sleep 18 hours - checked, be fabulous for the rest of the day - checked.
+Chew on cable the fat cat sat on the mat bat away with paws so stuff and things and hide head under 
+blanket so no one can see but trip on catnip. Murr i hate humans they are so annoying chew foot, and cat 
+dog hate mouse eat string barf pillow no baths hate everything. Experiences short bursts of poo-phoria 
+after going to the loo inspect anything brought into the house. Rub face on owner love lie on your belly 
+and purr when you are asleep or cough hairball on conveniently placed pants licks paws. Cats go for world
+domination. Cry louder at reflection bring your owner a dead bird so sleep on my human's head and put 
+toy mouse in food bowl run out of litter box at full speed chase imaginary bugs. Where is my slave?
+I'm getting hungry cats secretly make all the worlds muffins. Purr while eating. 
+Cough i like cats because they are fat and fluffy.Stare out the window stare at owner accusingly 
+then wink. Poop in litter box, scratch the walls intently sniff hand, so gimme attention gimme 
+attention gimme attention gimme attention gimme attention gimme attention just kidding i don't 
+want it anymore meow bye make muffins hack, or licks your face. Eat an easter feather as if it 
+were a bird then burp victoriously, but tender shred all toilet paper and spread around the house 
+do not try to mix old food with new one to fool me! so find a way to fit in tiny box i hate cucumber 
+pls dont throw it at me walk on car leaving trail of paw prints on hood and windshield. Purr meow
+but paw at your fat belly sit on human for throw down all the stuff in the kitchen run outside as 
+soon as door open. Dismember a mouse and then regurgitate parts of it on the family room floor 
+sit in box. Scamper slap owner's face at 5am until human fills food dish yet gimme attention gimme 
+attention gimme attention gimme attention gimme attention gimme attention just kidding i don't want 
+it anymore meow bye. Have my breakfast spaghetti yarn eat a rug and furry furry hairs everywhere oh
+no human coming lie on counter don't get off counter. I like fish. Love yowling nonstop the whole 
+night for sleep in the bathroom sink but pet me pet me pet me pet me, bite, scratch, why are you 
+petting me meow all night having their mate disturbing sleeping humans caticus cuteicus. Have secret 
+plans hey! you there, with the hands pretend not to be evil, stinky cat, lick the other cats meowing 
+chowing and wowing, why use post when this sofa is here. Rub whiskers on bare skin act innocent 
+attack feet fooled again thinking the dog likes me or purr, but annoy the old grumpy cat, start 
+a fight and then retreat to wash when i lose but i bet my nine lives on you-oooo-ooo-hooo and swat 
+turds around the house. Run in circles peer out window, chatter at birds, lure them to mouth kick
+up litter damn that dog cat mojo meow to be let out. Stare at wall turn and meow stare at wall 
+some more meow again continue staring massacre a bird in the living room and then look like the
+cutest and most innocent animal on the planet cough hairball on conveniently placed pants for then 
+cats take over the world for human is washing you why halp oh the horror flee scratch hiss bite for
+vommit food and eat it again flee in terror at cucumber discovered on floor. Eat a rug and furry 
+furry hairs everywhere oh no human coming lie on counter don't get off counter chase the pig around 
+the house. Tickle my belly at your own peril i will pester for food when you're in the kitchen even 
+if it's salad . I vomit in the bed in the middle of the night eats owners hair then claws head and 
+cat not kitten around for nya nya nyan cat fur is the new black . Purr as loud as possible, be the 
+most annoying cat that you can, and, knock everything off the table making sure that fluff gets into
+the owner's eyes pretend you want to go out but then don't and claw drapes. Instantly break out into 
+full speed gallop across the house for no reason warm up laptop with butt lick butt fart rainbows 
+until owner yells pee in litter box hiss at cats yet stare at ceiling stinky cat yet spend six hours
+per day washing, but still have a crusty butthole. Cuddle no cuddle cuddle love scratch scratch sniff
+all the things and pet my belly, you know you want to; seize the hand and shred it!. Stare at ceiling
+claws in your leg ask to go outside and ask to come inside and ask to go outside and ask to come 
+inside poop in the plant pot, yet stare at owner accusingly then wink or purr as loud as possible, 
+be the most annoying cat that you can, and, knock everything off the table. Chase imaginary bugs play
+riveting piece on synthesizer keyboard for my left donut is missing, as is my right so sleep on 
+dog bed, force dog to sleep on floor for destroy couch as revenge when owners are asleep, cry for no 
+apparent reason. Drink water out of the faucet hiss and stare at nothing then run suddenly away for 
+toy mouse squeak roll over and fall asleep upside-down yet lies down i could pee on this if i had the 
+energy for i show my fluffy belly but it's a trap! if you pet it i will tear up your hand. Climb leg 
+pretend not to be evil but scratch the box eats owners hair then claws head for murr i hate humans 
+they are so annoying pretend not to be evil or meowwww. A nice warm laptop for me to sit on freak 
+human out make funny noise mow mow mow mow mow mow success now attack human more napping, more 
+napping all the napping is exhausting but play riveting piece on synthesizer keyboard. 
+Eat the rubberband ears back wide eyed or kitty ipsum dolor sit amet, 
+shed everywhere shed everywhere stretching attack your ankles chase the red dot, 
+hairball run catnip eat the grass sniff, yet stare at ceiling". 
+"""
+
+word = "cat"
+
+words = book
+book = book.replace(",","")
+book = book.replace(".","")
+book = book.replace('"',"")
+book = book.replace("'","")
+book = book.replace('!',"")
+#print(book)
+
+#a)check every word to find count of the required word
+words = book.split()
+count = 0
+for i in words:
+    if(i == word):
+        count += 1
+print(count)
+
+#b)make a dictionary with words and counts, retrieve word count 
+words = book.split()
+d = defaultdict(lambda:0)
+for i in words:
+    d[i] += 1
+print(d[word])
