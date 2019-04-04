@@ -1,0 +1,25 @@
+ from collections import defaultdict
+
+def palindromepermutation(given_string):
+    #a) hash, check if counts even for all except zero/one character: 
+    #Time Complexity: O(n), Space Complexity: O(1)
+    d = defaultdict(lambda:0)
+    odds = 0
+    given_string = given_string.lower()
+    for i in given_string:
+        if(i == " "):
+            continue
+        d[i] += 1 
+        if(d[i] % 2 == 0):
+            odds -= 1
+        else:
+            odds += 1
+    if(odds <= 1):
+        #print(odds)
+        return True
+    return False
+    
+given_string = "Tact coa"
+
+x = palindromepermutation(given_string)
+print(x)        
